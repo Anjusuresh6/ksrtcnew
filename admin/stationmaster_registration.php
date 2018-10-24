@@ -3,16 +3,16 @@
 
 
 <section>
-	<div class="row">
-		<div class="col">
-			<form  action=""  method="post"    >
+	<div class="row-sm-10"  align="center">
+		<div class="col-sm-6" align="left" >
+			<form  action=""  method="post" data-parsley-validate   >
 
 
 
 
  <div class="form-group">
     <label for="name">Name</label>
-    <input type="text" class="form-control" id="name" name="name"   placeholder="Enter Name"> 
+    <input type="text" class="form-control" id="name" name="name"   placeholder="Enter Name" required="Required"> 
   </div>
 
   <div class="form-group">
@@ -30,38 +30,41 @@
 
 <div class="form-group">
     <label for="joiningyear">Joining Year</label>
-   <input type="date" name="joiningyr" id="joiningyr" class="form-control">
+   <input type="date" name="joiningyr" id="joiningyr" class="form-control" required="Required">
   </div>
 
   <div class="form-group">
     <label for="joiningyear">Contact No</label>
-   <input type="text" name="contactno" id="contactno" class="form-control " placeholder="Enter ContactNo">
+   <input type="text" name="contactno" id="contactno" class="form-control " placeholder="Enter ContactNo" required="Required">
   </div>
 
 <div class="form-group">
     <label for="joiningyear">User Name</label>
-   <input type="text" name="usrnmae" id="usrnmae" class="form-control" placeholder="Enter UserName">
+   <input type="text" name="usrnmae" id="usrnmae" class="form-control" placeholder="Enter UserName" required="Required">
   </div>
 
 <div class="form-group">
     <label for="joiningyear">Password</label>
-   <input type="Password" name="pswd" id="pswd" class="form-control" placeholder="Enter Password">
+   <input type="Password" name="pswd" id="pswd" class="form-control" placeholder="Enter Password" required="Required">
   </div>
 		
 	<div class="form-group">
-    <label for="joiningyear">Conform Password</label>
-   <input type="Password" name="cnfrmpswd" id="cnfrmpswd" class="form-control" placeholder="Conform Password">
+    <label for="joiningyear">Confirm Password</label>
+   <input type="Password" name="cnfrmpswd" id="cnfrmpswd" class="form-control" placeholder="Confirm Password" required="Required">
   </div>	 
     
-		<div class="form-group">
+		
+		 <div class="form-group">
     
-   <input type="button" name="submit" id="submit" value="Submit">
+   <input type="submit" name="submit" id="submit" value="Submit">
   </div>  
 			
-		 
 		
-		
+		</form>
 	</div>
+	
+</div>
+
 </section>
 
 <?php include_once('includes/footer.php') ?>
