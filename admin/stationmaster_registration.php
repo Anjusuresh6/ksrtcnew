@@ -17,13 +17,13 @@
 
   <div class="form-group">
     <label for="usertype">User Type</label>
-    <select name="typeofusr" value="select" class="form-control" id="typeofusr">
-		 	<option value="Select" selected="selected" disabled="disabled">Select</option>
-		  	<option value="Admin"> Admin</option>
+    <select name="typeofusr" value="select" class="form-control" id="typeofusr" disabled="disabled">
+		 	<!-- \\<option value="Select" selected="selected" disabled="disabled">Select</option> -->
+		  	<!-- <option value="Admin"> Admin</option> -->
 		  	<option value="Station Master">Station Master</option>
-		  	<option value="Inspector"> Inspector</option>
-		  	<option value="Driver"> Driver</option>
-		  	<option value="Conductor">Conductor</option>
+		  	<!-- <option value="Inspector"> Inspector</option> -->
+		  	<!-- <option value="Driver"> Driver</option> -->
+		  	<!-- <option value="Conductor">Conductor</option> -->
          </select> 
   </div>
 
@@ -34,23 +34,42 @@
   </div>
 
   <div class="form-group">
-    <label for="joiningyear">Contact No</label>
+    <label for="contactno">Contact No</label>
    <input type="text" name="contactno" id="contactno" class="form-control " placeholder="Enter ContactNo" required="Required">
   </div>
 
 <div class="form-group">
-    <label for="joiningyear">User Name</label>
-   <input type="text" name="usrnmae" id="usrnmae" class="form-control" placeholder="Enter UserName" required="Required">
+    <label for="depotname">Depot Name</label>
+    <select name="depotname" value="select" class="form-control" id="depotname">
+
+    <?php
+    $db=new Database();
+       $sql="SELECT * FROM `depot` WHERE 1";
+        
+ 
+                $result=$db->display($sql);
+                
+              foreach ($result as $key => $value) {
+              	  var_dump($value);
+	
+	              echo "<option value='$value[deponame]'>$value[deponame]</option>" ;
+                    }
+    
+       
+          ?>
+  
   </div>
+  
+  </select>
 
 <div class="form-group">
-    <label for="joiningyear">Password</label>
-   <input type="Password" name="pswd" id="pswd" class="form-control" placeholder="Enter Password" required="Required">
+    <label for="Depot UserName">Depot UserName</label>
+   <input type="text" name="dusrname" id="dusrname" class="form-control" readonly="readonly">
   </div>
 		
 	<div class="form-group">
-    <label for="joiningyear">Confirm Password</label>
-   <input type="Password" name="cnfrmpswd" id="cnfrmpswd" class="form-control" placeholder="Confirm Password" required="Required">
+    <label for="Depot Password">Depot Password</label>
+   <input type="Password" name="dpswd" id="dpswd" class="form-control"  readonly="readonly">
   </div>	 
     
 		
@@ -62,7 +81,7 @@
 		
 		</form>
 	</div>
-	
+
 </div>
 
 </section>

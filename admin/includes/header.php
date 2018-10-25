@@ -56,7 +56,7 @@ include_once("../includes/connection.php");
                   <span data-feather="shopping-cart"></span>
                   <i class="fas fa-user-circle"></i>
 
-                  Station Master Register
+                  StationMaster Add
                 </a>
               </li>
               <li class="nav-item">

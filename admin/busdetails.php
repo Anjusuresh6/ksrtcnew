@@ -1,8 +1,8 @@
 <?php include_once('includes/header.php') ?>
 
 <section>
-	<div class="row">
-		<div class="col">
+	<div class="row-sm-10"  align="center">
+		<div class="col-sm-6" align="left" >
 			<form  action="" method="" data-parsley-validate >
 				 <div class="form-group">
                 <label for="busno">Bus No</label>
@@ -23,6 +23,10 @@
     <label for="purchase">Purchase Date</label>
     <input type="Date" class="form-control" id="purcase" name="purcase"   placeholder="Enter Bus No" required="Required"> 
   </div>
+ <!--  <?php
+     $age=POST['purchase'].value-date;
+     echo $age;
+  ?> -->
 
   <div class="form-group">
     <label for="age">Age</label>
@@ -34,11 +38,11 @@
     <input type="number" class="form-control" id="seat" name="seat"   placeholder="Enter No of Seats" required="Required"> 
   </div>
 
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label for="route">Route</label>
     <input type="text"  id="source" name="source"   placeholder="Enter Source" class="form-control" required="Required"> To
      <input type="text"  id="destination" name="destination"   placeholder="Destination" class="form-control" required="Required">
-
+ -->
      <div class="form-group">
     <label for="depotname">Depot Name</label>
     <select name="depot" value="select" class="form-control"  name="depotname" id="depotname" required="Required">
@@ -58,7 +62,7 @@
   </div>
 
 
- <div class="form-group">
+<!--  <div class="form-group">
     <label for="distance">Coverage Distace</label>
     <input type="number" class="form-control" id="distance" name="distance"   placeholder="Enter Coverage Distance" required="Required"> 
   </div>
@@ -66,7 +70,7 @@
    <div class="form-group">
     <label for="amount">Collection Amount</label>
     <input type="number" class="form-control" id="amount" name="amount"   placeholder="Enter Collection Amount" required="Required"> 
-  </div>
+  </div> -->
   </div>
   <input type="submit" name="submit" value="Submit" onclick="action">
 </form>
