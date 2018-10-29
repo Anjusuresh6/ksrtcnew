@@ -68,6 +68,15 @@ include_once("../includes/connection.php");
                 </a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="busedit.php">
+                  <span data-feather="users"></span>
+                  <i class="fas fa-bus"></i>
+
+                  Bus Edit
+                </a>
+              </li>
+
+              <li class="nav-item">
                 <a class="nav-link" href="depotdetails.php">
                   <span data-feather="bar-chart-2"></span>
                   <i class="fas fa-landmark"></i>

@@ -1,6 +1,8 @@
 <?php include_once('includes/header.php') ?>
 <?php include_once('includes/header.php') ?>
-
+<?php
+$db=new Database();
+?>
 
 <section>
 	<div class="row-sm-10"  align="center">
@@ -40,10 +42,13 @@
 
 <div class="form-group">
     <label for="depotname">Depot Name</label>
-    <select name="depotname" value="select" class="form-control" id="depotname">
+    
+    <select name="depotname" value="select" class="form-control" id="depotname" OnChange="this.form.submit();">
+    
 
+     <option value="Select" selected="selected" disabled="disabled">Select</option>
     <?php
-    $db=new Database();
+    
        $sql="SELECT * FROM `depot` WHERE 1";
         
  
@@ -61,8 +66,15 @@
   </div>
   
   </select>
+</div>
+<?php
+  function Msg() {
+       echo("OK IT WORKS");
+     } 
+ //$depousrname= "SELECT depousername FROM `depot` WHERE deponame " 
+?>
 
-<div class="form-group">
+<!-- <div class="form-group">
     <label for="Depot UserName">Depot UserName</label>
    <input type="text" name="dusrname" id="dusrname" class="form-control" readonly="readonly">
   </div>
@@ -70,7 +82,7 @@
 	<div class="form-group">
     <label for="Depot Password">Depot Password</label>
    <input type="Password" name="dpswd" id="dpswd" class="form-control"  readonly="readonly">
-  </div>	 
+  </div>	 --> 
     
 		
 		 <div class="form-group">
