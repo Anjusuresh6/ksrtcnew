@@ -9,8 +9,8 @@ class Database extends Exception {
 	
 		// Setting up variables
 	private $host = 'localhost';
-	private $username = 'root';
-	private $password = '';
+	private $username = 'ksrtc';
+	private $password = 'ksrtc';
 	private $db = 'ksrtc';
 	
 	private $dbn;
