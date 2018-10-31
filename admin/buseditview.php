@@ -1,12 +1,16 @@
-<?php include_once('includes/header.php') ?>
+
+<?php
+
+include_once('includes/header.php'); ?>
 <?php
 $db=new Database();
 ?>
+
 <section>
 	<div class="row-sm-10"  align="center">
-	<div class="col-sm-6" align="left" >
-	<form  action=""  method="post" data-parsley-validate  align="center" >
-		<div class="form-group">
+		<div class="col-sm-6" align="left" >
+			<form  action=""  method="post" data-parsley-validate   >
+             <div class="form-group">
     <label for="depotname">Depot Name</label>
      </div>
     <select name="depotname" value="select" class="form-control" id="depotname" >
@@ -28,13 +32,20 @@ $db=new Database();
           ?>
   
   </div>
-  
-  </select>
-<input type="submit" name="submit" value="Submit" onclick="action" align="center" a href="buseditview.php">
-	</form>	
+     </select>
+<input type="submit" name="submit" value="Submit" onclick="action" align="center">
+			</form>
+		</div>
 	</div>
-    </div>
-			
 </section>
+	 
 
-<?php include_once('includes/footer.php') ?>
+
+
+
+
+
+
+
+
+<?php include_once('includes/footer.php'); ?>
