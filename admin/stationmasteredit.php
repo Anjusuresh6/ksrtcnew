@@ -30,7 +30,7 @@ $db=new Database();
   </div>
   
   </select>
-<input type="submit" name="submit" value="Submit" onclick="action" align="center" >
+<input type="submit" name="submit" value="Submit" onclick="frm2" align="center" >
 	</form>	
 	</div>
     </div>
@@ -39,6 +39,7 @@ $db=new Database();
 
 <div class="row">
   <div class="col-sm-12 ">
+    <form name="frm2"  method="post">
 <?php
 $dpname = $_POST['depotname'];
 ?>
@@ -68,19 +69,16 @@ $dpname = $_POST['depotname'];
 
         <?php
 
-
-        $stmnt=' SELECT * FROM `stationmaster` where `depotname=` "$dpname";
+        $stmnt=' SELECT * FROM `stationmaster` where `depotname`= "$dpname" ';
         
-
-
-        $details = $db->display($stmnt);
+         $details = $db->display($stmnt);
         
 
         ?>
 
         <?php foreach ($details as $key => $value): ?>
-   <tr>
-        <td><?php echo $value['stationmasterid']; ?></td>
+        <tr>
+        <td> <?php echo $value['stationmasterid']; ?> </td>
         <td><?php echo $value['name'];  ?></td>
         <td><?php echo $value['type']; ?></td>
         <td><?php echo $value['joiningyear']; ?></td>
@@ -90,9 +88,8 @@ $dpname = $_POST['depotname'];
           <td><?php echo $value['depotpswd']; ?></td>
 
 
-<td><a href="admin/stationmasterfulviewvol.php?id=<?php echo $value['stationmasterid']; ?>"  class="btn btn-sm btn-info "  > <i  class=" fa fa-eye"></i></a>
-<td><a href="admin/stationmasteredit_vol.php?id=<?php echo $value['stationmasterid']; ?>"   class="btn btn-sm btn-warning "  ><i class="far fa-edit"></i></a>
-      </td>
+<td><a href="admin/stationmasterfulviewvol.php" id= <?php echo $value['stationmasterid']; ?>"  class="btn btn-sm btn-info "  > <i  class=" fa fa-eye"></i></a></td>
+ <td><a href="admin/stationmasteredit_vol.php" id=<?php echo $value['stationmasterid']; ?>"   class="btn btn-sm btn-warning "  ><i class="far fa-edit"></i></a>     </td>
     </tr>
 
 
@@ -107,5 +104,5 @@ $dpname = $_POST['depotname'];
 
   </div> 
 </div>
-
+</form>
 <?php include_once('includes/footer.php') ?>

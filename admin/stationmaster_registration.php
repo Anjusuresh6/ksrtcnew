@@ -20,12 +20,8 @@ $db=new Database();
   <div class="form-group">
     <label for="usertype">User Type</label>
     <select name="typeofusr" value="select" class="form-control" id="typeofusr" disabled="disabled">
-		 	<!-- \\<option value="Select" selected="selected" disabled="disabled">Select</option> -->
-		  	<!-- <option value="Admin"> Admin</option> -->
-		  	<option value="Station Master">Station Master</option>
-		  	<!-- <option value="Inspector"> Inspector</option> -->
-		  	<!-- <option value="Driver"> Driver</option> -->
-		  	<!-- <option value="Conductor">Conductor</option> -->
+		 	<option value="Station Master">Station Master</option>
+		  	
          </select> 
   </div>
 
@@ -42,8 +38,8 @@ $db=new Database();
 
 <div class="form-group">
     <label for="depotname">Depot Name</label>
-    
-    <select name="depotname" value="select" class="form-control" id="depotname" OnChange="this.form.submit();">
+    <form method="post">
+    <select name="depotname" value="select" class="form-control" id="depotname" OnChange="this.form.submit()">
     
 
      <option value="Select" selected="selected" disabled="disabled">Select</option>
@@ -66,26 +62,25 @@ $db=new Database();
   </div>
   
   </select>
-</div>
-<?php
-  function Msg() {
-       echo("OK IT WORKS");
-     } 
- //$depousrname= "SELECT depousername FROM `depot` WHERE deponame " 
-?>
+  <?php 
+  if (isset($_POST['submit']))
+  {
+  $dpname=POST['depotname'] ; 
+   $stmnt=' SELECT * FROM `depot` where `depotname`= "$dpname" ';
+        
+         $details = $db->display($stmnt);
+        
+        foreach ($details as $key => $value){
+        	$usrname= $value['depousername'];
+        	$pswd=$value['depopswd'];
 
-<!-- <div class="form-group">
-    <label for="Depot UserName">Depot UserName</label>
-   <input type="text" name="dusrname" id="dusrname" class="form-control" readonly="readonly">
-  </div>
-		
-	<div class="form-group">
-    <label for="Depot Password">Depot Password</label>
-   <input type="Password" name="dpswd" id="dpswd" class="form-control"  readonly="readonly">
-  </div>	 --> 
-    
-		
-		 <div class="form-group">
+       }
+  ?>
+}
+  </form>
+</div>
+
+ <div class="form-group">
     
    <input type="submit" name="submit" id="submit" value="Submit">
   </div>  
