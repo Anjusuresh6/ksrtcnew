@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 29, 2018 at 09:16 AM
+-- Generation Time: Nov 07, 2018 at 02:07 PM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -150,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `depot` (
   `depopswd` varchar(20) NOT NULL,
   `conformpswd` varchar(20) NOT NULL,
   PRIMARY KEY (`depoid`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `depot`
@@ -272,6 +272,32 @@ CREATE TABLE IF NOT EXISTS `register` (
   `password` varchar(20) NOT NULL,
   PRIMARY KEY (`regid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stationmaster`
+--
+
+DROP TABLE IF EXISTS `stationmaster`;
+CREATE TABLE IF NOT EXISTS `stationmaster` (
+  `stationmasterid` int(20) NOT NULL AUTO_INCREMENT,
+  `name` char(50) NOT NULL,
+  `type` char(50) NOT NULL,
+  `joiningyear` date NOT NULL,
+  `contactno` bigint(20) NOT NULL,
+  `depotname` char(50) NOT NULL,
+  `depotusename` varchar(20) NOT NULL,
+  `depotpswd` varchar(20) NOT NULL,
+  PRIMARY KEY (`stationmasterid`)
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `stationmaster`
+--
+
+INSERT INTO `stationmaster` (`stationmasterid`, `name`, `type`, `joiningyear`, `contactno`, `depotname`, `depotusename`, `depotpswd`) VALUES
+(8, 'Jeevan', 'Station Master', '2005-05-02', 9400472663, 'Mallappally', 'Dmlply', 'Dmlply');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
