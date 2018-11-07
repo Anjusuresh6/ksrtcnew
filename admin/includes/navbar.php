@@ -41,7 +41,7 @@
 				<a class="nav-link" href="admin/stationmaster_registration.php">Add</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="admin/#">View</a>
+				<a class="nav-link" href="admin/stationmasteredit.php">View</a>
 			</li>
 		</ul>
 	</div>
@@ -59,7 +59,7 @@
 	<div class="collapse" id="bus">
 		<ul class="nav flex-column sub-menu">
 			<li class="nav-item">
-				<a class="nav-link" href="admin/busdetails.php">Details</a>
+				<a class="nav-link" href="admin/busdetails.php">Add</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="admin/busedit.php">Edit</a>

@@ -3,13 +3,147 @@
 <?php
 $db=new Database();
 ?>
+<?php
+if (isset($_POST['submit'])) {	
+	$deponame = $_POST['depotname'];
+ $stmnt=" SELECT * FROM `depot` where `deponame`= '$deponame' ";
+        
+         $details = $db->display($stmnt);
+        
+        foreach ($details as $key => $value){
+        	$usrname= $value['depousername'];
+        	$pswd=$value['depopswd'];
+        }
+
+	//var_dump($_POST);
+	
+
+	$name = $_POST['name'];
+	$type = $_POST['typeofusr'];
+	$yr = $_POST['joiningyr'];
+	$no = $_POST['contactno'];
+	$submit=$_POST['submit'];
+ 
+
+ $stmnt ='insert into stationmaster (name,type,joiningyear,contactno,depotname,depotusename,depotpswd) values( :name,:type,:yr,:no,:deponame,:usrname,:pswd)';
+	     
+	     	     $params=array(
+                 
+          ':deponame'   =>  $deponame,
+         ':name'        =>  $name,
+         ':type'       =>  $type,
+         ':yr'    =>  $yr,
+         
+         ':no'     =>  $no,
+          ':usrname'       =>  $usrname,
+          ':pswd'        =>  $pswd,
+          
+         // ':longestroute'    =>  $lngstsrc.$lngstdes,
+         // ':topcollection'   =>  $tpsrc.$tpdes,
+         // ':income'          =>  $income,
+         
+	     	);
+ 
+	         $istrue=$db->execute_query($stmnt,$params);
+	                 if($istrue){
+	         	                  $message= 'added';
+	         	                  echo "hai";
+	                            }
+	                 else{
+	         	          $message=$istrue;
+	         	           echo "hlo";	
+	                     }
+	     
+
+}
+
+?>
 
 <section>
 	<div class="row-sm-10"  align="center">
 		<div class="col-sm-6" align="left" >
-			<form  action=""  method="post" data-parsley-validate   >
 
 
+<form action="" method="post">
+	
+<div class="form-group">
+    <label for="depotname">Depot Name</label>
+
+    <select name="depotname" value="select" class="form-control" id="depotname" OnChange="this.form.submit()">
+    
+
+     <option value="Select" selected="selected" disabled="disabled">Select</option>
+    <?php
+    
+       $sql="SELECT * FROM `depot` WHERE 1";
+        
+ 
+                $result=$db->display($sql);
+                
+              foreach ($result as $key => $value) {
+              	   
+	
+	               //echo "<option value='$value[deponame]'>$value[deponame]</option>" ;
+
+									
+									$name = $value['deponame'];
+									
+
+									$selectedMe = "";
+									if(isset($_POST['depotname']))
+										if($_POST['depotname'] == $name )
+											$selectedMe = "  selected ";
+
+
+										echo "<option value='$name'   $selectedMe>$name</option>";
+									
+									
+
+                    }
+    ?>
+       
+ 
+  </select>
+  </div>
+  
+</form>
+
+
+<?php 
+
+
+if (isset($_POST['depotname'])) {
+	$dpname = $_POST['depotname'];
+
+
+ 
+    $stmnt=" SELECT * FROM `depot` where `deponame`= '$dpname' ";
+        
+         $details = $db->display($stmnt);
+        
+        foreach ($details as $key => $value){
+        	$usrname= $value['depousername'];
+        	$pswd=$value['depopswd'];
+
+       }
+
+
+
+
+
+
+
+
+}
+
+
+
+?>
+
+
+<form  action=""  method="post" data-parsley-validate   >
+
+<input type="hidden" name="depotname" value="<?php if(isset($_POST['depotname'])) {echo $_POST['depotname'];} ?>">
 
 
  <div class="form-group">
@@ -20,13 +154,10 @@ $db=new Database();
   <div class="form-group">
     <label for="usertype">User Type</label>
     <select name="typeofusr" value="select" class="form-control" id="typeofusr" disabled="disabled">
-		 	<!-- \\<option value="Select" selected="selected" disabled="disabled">Select</option> -->
-		  	<!-- <option value="Admin"> Admin</option> -->
-		  	<option value="Station Master">Station Master</option>
-		  	<!-- <option value="Inspector"> Inspector</option> -->
-		  	<!-- <option value="Driver"> Driver</option> -->
-		  	<!-- <option value="Conductor">Conductor</option> -->
+		 	<option value="Station Master">Station Master</option>
+		  	
          </select> 
+         <input type="hidden" name="typeofusr" value="Station Master">
   </div>
 
 
@@ -40,54 +171,14 @@ $db=new Database();
    <input type="text" name="contactno" id="contactno" class="form-control " placeholder="Enter ContactNo" required="Required">
   </div>
 
-<div class="form-group">
-    <label for="depotname">Depot Name</label>
-    
-    <select name="depotname" value="select" class="form-control" id="depotname" OnChange="this.form.submit();">
-    
 
-     <option value="Select" selected="selected" disabled="disabled">Select</option>
-    <?php
-    
-       $sql="SELECT * FROM `depot` WHERE 1";
-        
- 
-                $result=$db->display($sql);
-                
-              foreach ($result as $key => $value) {
-              	  var_dump($value);
-	
-	              echo "<option value='$value[deponame]'>$value[deponame]</option>" ;
-                    }
-    
-       
-          ?>
   
-  </div>
   
-  </select>
-</div>
-<?php
-  function Msg() {
-       echo("OK IT WORKS");
-     } 
- //$depousrname= "SELECT depousername FROM `depot` WHERE deponame " 
-?>
 
-<!-- <div class="form-group">
-    <label for="Depot UserName">Depot UserName</label>
-   <input type="text" name="dusrname" id="dusrname" class="form-control" readonly="readonly">
-  </div>
-		
-	<div class="form-group">
-    <label for="Depot Password">Depot Password</label>
-   <input type="Password" name="dpswd" id="dpswd" class="form-control"  readonly="readonly">
-  </div>	 --> 
+
+ <div class="form-group">
     
-		
-		 <div class="form-group">
-    
-   <input type="submit" name="submit" id="submit" value="Submit">
+   <input type="submit" name="submit" id="submit" value="Submit" onclick="action">
   </div>  
 			
 		
