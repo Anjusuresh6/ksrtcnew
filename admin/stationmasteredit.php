@@ -31,7 +31,15 @@ $db=new Database();
   
   </select>
 <input type="submit" name="submit" value="Submit" onclick="frm2" align="center" >
-	</form>	
+	</form>
+  <?php
+        if (isset($_POST['depotname']))	
+        {
+           
+          $dpname = $_POST['depotname'];
+
+        }
+        ?>
 	</div>
     </div>
 			
@@ -40,9 +48,7 @@ $db=new Database();
 <div class="row">
   <div class="col-sm-12 ">
     <form name="frm2"  method="post">
-<?php
-$dpname = $_POST['depotname'];
-?>
+
 
 
     <div class="page-header">
@@ -68,11 +74,16 @@ $dpname = $_POST['depotname'];
       <tbody>
 
         <?php
+        if (isset($_POST['depotname'])) {
+         $dpname = $_POST['depotname'];
 
-        $stmnt=' SELECT * FROM `stationmaster` where `depotname`= "$dpname" ';
+
+
+         $stmnt=" SELECT * FROM `stationmaster` where `deponame`= '$dpname' ";
+        
         
          $details = $db->display($stmnt);
-        
+        }
 
         ?>
 
