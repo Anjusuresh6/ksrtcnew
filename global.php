@@ -4,7 +4,7 @@
  * @Author: indran
  * @Date:   2018-10-17 13:24:39
  * @Last Modified by:   indran
- * @Last Modified time: 2018-10-17 17:40:01
+ * @Last Modified time: 2018-11-08 06:35:45
  */
 ?>
 <?php
@@ -61,7 +61,7 @@ define( 'DIRECTORY_PUBLIC', DIRECTORY  . '' );
 
 
 
-define( 'DIRECTORY_ADMIN', DIRECTORY . ADMIN . '/dashboard' ); 
+define( 'DIRECTORY_ADMIN', DIRECTORY . ADMIN . '/' ); 
 
 
 

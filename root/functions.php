@@ -4,7 +4,7 @@
  * @Author: indran
  * @Date:   2018-08-21 18:45:04
  * @Last Modified by:   indran
- * @Last Modified time: 2018-10-17 13:43:22
+ * @Last Modified time: 2018-11-08 06:45:25
  */
 function auth_login() {
 
@@ -19,7 +19,7 @@ function auth_login() {
 
 		switch ($current_now) {
 			case ADMIN :
-			setLocation( DIRECTORY_ADMIN);
+			setLocation( DIRECTORY_ADMIN.'login.php');
 			break;
 
 

@@ -3,8 +3,8 @@
 /**
  * @Author: indran
  * @Date:   2018-10-17 16:48:54
- * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2018-10-29 19:03:56
+ * @Last Modified by:   indran
+ * @Last Modified time: 2018-11-08 06:45:42
  */
 
 include_once('../global.php'); ?>
@@ -12,7 +12,7 @@ include_once('../global.php'); ?>
 <?php include_once('../root/connection.php'); ?>
 <?php  
 
-// auth_login();
+auth_login();
 ?>
 
 
@@ -124,15 +124,15 @@ include_once('../global.php'); ?>
 											</div>
                     </a>
                     
-  -->
-									</div>
-								</li>
-								<li class="nav-item dropdown ml-4">
-									<a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-										<i class="mdi mdi-bell-outline"></i>
-										<span class="count bg-success">4</span>
-									</a>
-									<div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="notificationDropdown">
+                -->
+            </div>
+        </li>
+        <li class="nav-item dropdown ml-4">
+        	<a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+        		<i class="mdi mdi-bell-outline"></i>
+        		<span class="count bg-success">4</span>
+        	</a>
+        	<div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="notificationDropdown">
                   <!--
                   <a class="dropdown-item py-3 border-bottom">
 											<p class="mb-0 font-weight-medium float-left">You have 4 new notifications </p>
@@ -165,46 +165,46 @@ include_once('../global.php'); ?>
 												<p class="font-weight-light small-text mb-0"> 2 days ago </p>
 											</div>
                     </a>
-  -->
-									</div>
-								</li>
+                -->
+            </div>
+        </li>
 
-								<li class="nav-item dropdown d-none d-xl-inline-block">
-									<a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-										<span class="profile-text">Hello, Admin !</span>
-										<img class="img-xs rounded-circle" src="assets/image/default/user.png" alt="Profile image"> </a>
-										<div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
-										 
-											<a class="dropdown-item mt-2"> Manage Accounts </a>
-											<a class="dropdown-item"> Change Password </a>
-											<a class="dropdown-item"> Check Inbox </a>
-											<a class="dropdown-item" href="exit"> Sign Out </a>
-										</div>
-									</li>
-								</ul>
-								<button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-									<span class="ti-menu"></span>
-								</button>
-							</div>
-						</nav>
-						
-
-						<div class="container-fluid page-body-wrapper">
-							
+        <li class="nav-item dropdown d-none d-xl-inline-block">
+        	<a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+        		<span class="profile-text">Hello, Admin !</span>
+        		<img class="img-xs rounded-circle" src="assets/image/default/user.png" alt="Profile image"> </a>
+        		<div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+        			
+        			<a class="dropdown-item mt-2"> Manage Accounts </a>
+        			<a class="dropdown-item"> Change Password </a>
+        			<a class="dropdown-item"> Check Inbox </a>
+        			<a class="dropdown-item" href="exit"> Sign Out </a>
+        		</div>
+        	</li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+        	<span class="ti-menu"></span>
+        </button>
+    </div>
+</nav>
 
 
-							
-
-							
-
-							<nav class="sidebar sidebar-offcanvas" id="sidebar">
-								<ul class="nav">
-							 
-										<?php  include_once('navbar.php'); ?>
-									</ul>
-								</nav>
-
-								<div class="main-panel">
+<div class="container-fluid page-body-wrapper">
+	
 
 
-<div class="content-wrapper">
+	
+
+	
+
+	<nav class="sidebar sidebar-offcanvas" id="sidebar">
+		<ul class="nav">
+			
+			<?php  include_once('navbar.php'); ?>
+		</ul>
+	</nav>
+
+	<div class="main-panel">
+
+
+		<div class="content-wrapper">
