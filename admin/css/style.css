@@ -1,75 +1,75 @@
 /*
 * @Author: indran
 * @Date:   2018-10-17 14:04:00
- * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2018-10-29 18:28:14
-*/
+ * @Last Modified by:   indran
+ * @Last Modified time: 2018-11-08 06:23:06
+ */
 
 
-@import url(../../assets/css/googe-material-icons.css);
-@import url(../../assets/css/fontawesome-all.min.css);
-@import url(../../assets/css/themify-icons.css);
-@import url(../../assets/css/materialdesignicons.min.css);
+ @import url(../../assets/css/googe-material-icons.css);
+ @import url(../../assets/css/fontawesome-all.min.css);
+ @import url(../../assets/css/themify-icons.css);
+ @import url(../../assets/css/materialdesignicons.min.css);
 
 
-@import url(../../assets/css/animate.min.css);
+ @import url(../../assets/css/animate.min.css);
 
 
 
-/*@import url(../../assets/components/Ionicons/css/ionicons.css);*/
-/*@import url(../../assets/components/linea-icons/linea.css);*/
-/*@import url(../../assets/components/glyphicons/glyphicon.css);*/
+ /*@import url(../../assets/components/Ionicons/css/ionicons.css);*/
+ /*@import url(../../assets/components/linea-icons/linea.css);*/
+ /*@import url(../../assets/components/glyphicons/glyphicon.css);*/
 
 
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
-@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+ @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+ @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
 
 
-:root {
-	--blue: #00aeef;
-	--indigo: #6610f2;
-	--purple: #ab8ce4;
-	--pink: #E91E63;
-	--red: #ff0017;
-	--orange: #fb9678;
-	--yellow: #ffd500;
-	--green: #3bd949;
-	--teal: #58d8a3;
-	--cyan: #57c7d4;
-	--white: #ffffff;
-	--gray: #6c757d;
-	--gray-dark: #292b2c;
-	--blue: #00aeef;
-	--indigo: #6610f2;
-	--purple: #ab8ce4;
-	--pink: #E91E63;
-	--red: #ff0017;
-	--orange: #fb9678;
-	--yellow: #ffd500;
-	--green: #3bd949;
-	--teal: #58d8a3;
-	--cyan: #57c7d4;
-	--white: #ffffff;
-	--white-smoke: #f3f5f6;
-	--gray: #6c757d;
-	--gray-light: #8ba2b5;
-	--gray-lightest: #f7f7f9;
-	--primary: #2196f3;
-	--secondary: #e6eef2;
-	--success: #19d895;
-	--info: #8862e0;
-	--warning: #ffaf00;
-	--danger: #ff6258;
-	--light: #fbfbfb;
-	--dark: #252C46;
-	--breakpoint-xs: 0;
-	--breakpoint-sm: 576px;
-	--breakpoint-md: 768px;
-	--breakpoint-lg: 992px;
-	--breakpoint-xl: 1200px;
-	--font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
+ :root {
+ 	--blue: #00aeef;
+ 	--indigo: #6610f2;
+ 	--purple: #ab8ce4;
+ 	--pink: #E91E63;
+ 	--red: #ff0017;
+ 	--orange: #fb9678;
+ 	--yellow: #ffd500;
+ 	--green: #3bd949;
+ 	--teal: #58d8a3;
+ 	--cyan: #57c7d4;
+ 	--white: #ffffff;
+ 	--gray: #6c757d;
+ 	--gray-dark: #292b2c;
+ 	--blue: #00aeef;
+ 	--indigo: #6610f2;
+ 	--purple: #ab8ce4;
+ 	--pink: #E91E63;
+ 	--red: #ff0017;
+ 	--orange: #fb9678;
+ 	--yellow: #ffd500;
+ 	--green: #3bd949;
+ 	--teal: #58d8a3;
+ 	--cyan: #57c7d4;
+ 	--white: #ffffff;
+ 	--white-smoke: #f3f5f6;
+ 	--gray: #6c757d;
+ 	--gray-light: #8ba2b5;
+ 	--gray-lightest: #f7f7f9;
+ 	--primary: #2196f3;
+ 	--secondary: #e6eef2;
+ 	--success: #19d895;
+ 	--info: #8862e0;
+ 	--warning: #ffaf00;
+ 	--danger: #ff6258;
+ 	--light: #fbfbfb;
+ 	--dark: #252C46;
+ 	--breakpoint-xs: 0;
+ 	--breakpoint-sm: 576px;
+ 	--breakpoint-md: 768px;
+ 	--breakpoint-lg: 992px;
+ 	--breakpoint-xl: 1200px;
+ 	--font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+ 	--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+ }
 
 }
 
@@ -10239,7 +10239,8 @@ input:focus {
 
 .navbar.default-layout {
 	font-family: "Poppins", sans-serif;
-	background: linear-gradient(120deg, #556cdc, #128bfc, #18bef1);
+	/*background: linear-gradient(120deg, #556cdc, #128bfc, #18bef1);*/
+	background: linear-gradient(120deg, #dc55cb, #ae12fcba, #fd300ee0);
 	transition: background 0.25s ease;
 	-webkit-transition: background 0.25s ease;
 	-moz-transition: background 0.25s ease;
