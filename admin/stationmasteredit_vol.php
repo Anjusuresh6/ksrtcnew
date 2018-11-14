@@ -4,7 +4,7 @@
 <?php
 if (isset($_POST['submit'])) {			
 	//var_dump($_POST);
-	//$sid = $_POST['sid'];
+	$sid = $_POST['sid'];
 	$name = $_POST['sname'];
 	$type = $_POST['type'];
 	$joining = $_POST['joining'];
@@ -15,17 +15,17 @@ if (isset($_POST['submit'])) {
 	$submit=$_POST['submit'];
  
 
- $stmnt ='insert into stationmaster (name,type,joiningyear,contactno,depotname,depotusename,depotpswd) values( :sname,:type,:joining,:cno,:dname,:dusr,:dpswd)';
+ $stmnt ='UPDATE `stationmaster` SET name =:sname,type=:type,joiningyear=:joining,contactno=:cno,depotname=:dname,depotusename=:dusr,depotpswd=:dpswd WHERE stationmasterid=:sid ';
 	     
 	     	     $params=array(
                  
        
-         //':sid'        =>  $sid,
+         ':sid'        =>  $sid,
           ':sname'        =>  $name,
          ':type'       =>  $type,
-         ':joining'    =>  $joining,
+         '  :joining'    =>  $joining,
          
-         ':cno'     =>  $cno,
+              ':cno'     =>  $cno,
           ':dname'       =>  $dname,
            ':dusr'        =>  $dusr,
           ':dpswd'        =>  $dpswd,

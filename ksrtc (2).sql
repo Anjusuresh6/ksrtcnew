@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 07, 2018 at 02:07 PM
+-- Generation Time: Nov 14, 2018 at 08:02 AM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -253,7 +253,14 @@ CREATE TABLE IF NOT EXISTS `login` (
   `password` varchar(30) NOT NULL,
   `usertype` varchar(20) NOT NULL,
   PRIMARY KEY (`userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`userid`, `username`, `password`, `usertype`) VALUES
+(1, 'admin@ksrtc.com', 'admin123', 'admin');
 
 -- --------------------------------------------------------
 
@@ -290,14 +297,16 @@ CREATE TABLE IF NOT EXISTS `stationmaster` (
   `depotusename` varchar(20) NOT NULL,
   `depotpswd` varchar(20) NOT NULL,
   PRIMARY KEY (`stationmasterid`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `stationmaster`
 --
 
 INSERT INTO `stationmaster` (`stationmasterid`, `name`, `type`, `joiningyear`, `contactno`, `depotname`, `depotusename`, `depotpswd`) VALUES
-(8, 'Jeevan', 'Station Master', '2005-05-02', 9400472663, 'Mallappally', 'Dmlply', 'Dmlply');
+(10, 'Jeevan', 'Station Master', '2005-05-02', 9400472663, 'Mallappally', 'Dmlply', 'Dmlply'),
+(12, 'Anju M', 'Station Master', '2005-03-02', 7034409806, 'Thiruvalla', 'Dtvla', 'Dtvla'),
+(13, 'Jeevan', 'Station Master', '2005-05-02', 9400472663, 'Mallappally', 'Dmlply', 'Dmlply');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
