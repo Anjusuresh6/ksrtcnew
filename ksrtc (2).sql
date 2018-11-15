@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 14, 2018 at 08:02 AM
+-- Generation Time: Nov 15, 2018 at 06:35 AM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -89,15 +89,17 @@ CREATE TABLE IF NOT EXISTS `bus` (
   `noofseats` int(10) NOT NULL,
   `depot` varchar(30) NOT NULL,
   `producer` varchar(30) NOT NULL,
-  PRIMARY KEY (`busid`)
+  `depoid` int(20) NOT NULL,
+  PRIMARY KEY (`busid`),
+  KEY `depoid` (`depoid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `bus`
 --
 
-INSERT INTO `bus` (`busid`, `type`, `purchasedate`, `noofseats`, `depot`, `producer`) VALUES
-('KL 1 345', 'ordinary', '2018-01-02', 50, 'Ponkunnam', 'Ashok Leyland');
+INSERT INTO `bus` (`busid`, `type`, `purchasedate`, `noofseats`, `depot`, `producer`, `depoid`) VALUES
+('KL 1 345', 'ordinary', '2018-01-02', 50, 'Ponkunnam', 'Ashok Leyland', 2);
 
 -- --------------------------------------------------------
 
@@ -144,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `conductor` (
 DROP TABLE IF EXISTS `depot`;
 CREATE TABLE IF NOT EXISTS `depot` (
   `depoid` int(20) NOT NULL AUTO_INCREMENT,
-  `deponame` char(20) NOT NULL,
+  `depotname` char(20) NOT NULL,
   `contactno` bigint(20) NOT NULL,
   `depousername` varchar(20) CHARACTER SET utf8 NOT NULL,
   `depopswd` varchar(20) NOT NULL,
@@ -156,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `depot` (
 -- Dumping data for table `depot`
 --
 
-INSERT INTO `depot` (`depoid`, `deponame`, `contactno`, `depousername`, `depopswd`, `conformpswd`) VALUES
+INSERT INTO `depot` (`depoid`, `depotname`, `contactno`, `depousername`, `depopswd`, `conformpswd`) VALUES
 (1, 'Mallappally', 9846578638, 'Dmlply', 'Dmlply', 'Dmlply'),
 (2, 'Ponkunnam', 4582200201, 'Dpnknm', 'Dpnknm', 'Dpnknm'),
 (3, 'Thiruvalla', 4692568412, 'Dtvla', 'Dtvla', 'Dtvla'),
@@ -297,16 +299,26 @@ CREATE TABLE IF NOT EXISTS `stationmaster` (
   `depotusename` varchar(20) NOT NULL,
   `depotpswd` varchar(20) NOT NULL,
   PRIMARY KEY (`stationmasterid`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `stationmaster`
 --
 
 INSERT INTO `stationmaster` (`stationmasterid`, `name`, `type`, `joiningyear`, `contactno`, `depotname`, `depotusename`, `depotpswd`) VALUES
-(10, 'Jeevan', 'Station Master', '2005-05-02', 9400472663, 'Mallappally', 'Dmlply', 'Dmlply'),
-(12, 'Anju M', 'Station Master', '2005-03-02', 7034409806, 'Thiruvalla', 'Dtvla', 'Dtvla'),
-(13, 'Jeevan', 'Station Master', '2005-05-02', 9400472663, 'Mallappally', 'Dmlply', 'Dmlply');
+(10, 'Jeevan Jayan', 'Station Master', '2005-05-02', 9400472663, 'Mallappally', 'Mallappally', 'Dmlply'),
+(16, 'Leya', 'Station Master', '2006-05-20', 9544139255, 'Erumely', 'Dermly', 'Dermly'),
+(12, 'Anju Rajan', 'Station Master', '2005-03-02', 7034409806, 'Thiruvalla', 'Thiruvalla', 'Dtvla');
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `bus`
+--
+ALTER TABLE `bus`
+  ADD CONSTRAINT `bus_ibfk_1` FOREIGN KEY (`depoid`) REFERENCES `depot` (`depoid`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

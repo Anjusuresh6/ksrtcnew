@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
 	$submit=$_POST['submit'];
  
 
- $stmnt ='insert into depot (deponame,contactno,depousername,depopswd,conformpswd) values( :deponame,:contactno,:depousername,:depopswd,:conformpswd)';
+ $stmnt ='insert into depot (depotname,contactno,depousername,depopswd,conformpswd) values( :deponame,:contactno,:depousername,:depopswd,:conformpswd)';
 	     
 	     	     $params=array(
                  

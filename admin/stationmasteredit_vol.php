@@ -13,37 +13,55 @@ if (isset($_POST['submit'])) {
 	$dusr = $_POST['dusr'];
 	$dpswd = $_POST['dpswd'];
 	$submit=$_POST['submit'];
+
+	$params = array(
+
+
+
+'name' => $name,
+'type' => $type,
+'joiningyear' => $joining,
+'contactno' => $cno,
+'depotname' => $dname,
+'depotusename' => $dname,
+'depotpswd' => $dpswd
+	);
  
 
- $stmnt ='UPDATE `stationmaster` SET name =:sname,type=:type,joiningyear=:joining,contactno=:cno,depotname=:dname,depotusename=:dusr,depotpswd=:dpswd WHERE stationmasterid=:sid ';
+ // echo $stmnt ='UPDATE `stationmaster` SET name =:sname,type=:type,joiningyear=:joining,contactno=:cno,depotname=:dname,depotusename=:dusr,depotpswd=:dpswd WHERE stationmasterid=:sid ';
 	     
-	     	     $params=array(
+	//      	     $params=array(
                  
        
-         ':sid'        =>  $sid,
-          ':sname'        =>  $name,
-         ':type'       =>  $type,
-         '  :joining'    =>  $joining,
+ //          ':sname'        =>  $name,
+ //         ':type'       =>  $type,
+ //         '  :joining'    =>  $joining,
          
-              ':cno'     =>  $cno,
-          ':dname'       =>  $dname,
-           ':dusr'        =>  $dusr,
-          ':dpswd'        =>  $dpswd,
-         // ':noofemployees'   =>  $emp,
-         // ':longestroute'    =>  $lngstsrc.$lngstdes,
-         // ':topcollection'   =>  $tpsrc.$tpdes,
-         // ':income'          =>  $income,
+ //              ':cno'     =>  $cno,
+ //          ':dname'       =>  $dname,
+ //           ':dusr'        =>  $dusr,
+ //          ':dpswd'        =>  $dpswd,
+
+ //         ':sid'        =>  $sid
+ //         // ':noofemployees'   =>  $emp,
+ //         // ':longestroute'    =>  $lngstsrc.$lngstdes,
+ //         // ':topcollection'   =>  $tpsrc.$tpdes,
+ //         // ':income'          =>  $income,
          
-	     	);
+	//      	);
  
-	         $istrue=$db->execute_query($stmnt,$params);
+	//          $istrue=$db->execute_query($stmnt,$params);
+
+
+	$istrue = updateTable( 'stationmaster', $params, ' stationmasterid =' . $sid  , $db); 
 	                 if($istrue){
 	         	                  $message= 'Updated Successfully';
-	         	                  echo "hai";
+	         	                  echo "Updated Successfully";
+	         	                   setLocation("admin/stationmasteredit.php");
 	                            }
 	                 else{
 	         	          $message=$istrue;
-	         	           echo "hlo";	
+	         	           echo "Duplicate values";	
 	                     }
 	     
 

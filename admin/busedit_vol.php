@@ -1,3 +1,5 @@
 <?php
-echo "date(dd/mm/yyyy)",
+$y;
+$y=date("Y");
+echo "$y";
 ?>

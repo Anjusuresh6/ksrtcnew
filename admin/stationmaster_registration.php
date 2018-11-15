@@ -6,7 +6,7 @@ $db=new Database();
 <?php
 if (isset($_POST['submit'])) {	
 	$deponame = $_POST['depotname'];
- $stmnt=" SELECT * FROM `depot` where `deponame`= '$deponame' ";
+ $stmnt=" SELECT * FROM `depot` where `depotname`= '$deponame' ";
         
          $details = $db->display($stmnt);
         
@@ -86,7 +86,7 @@ if (isset($_POST['submit'])) {
 	               //echo "<option value='$value[deponame]'>$value[deponame]</option>" ;
 
 									
-									$name = $value['deponame'];
+									$name = $value['depotname'];
 									
 
 									$selectedMe = "";
@@ -117,7 +117,7 @@ if (isset($_POST['depotname'])) {
 
 
  
-    $stmnt=" SELECT * FROM `depot` where `deponame`= '$dpname' ";
+    $stmnt=" SELECT * FROM `depot` where `depotname`= '$dpname' ";
         
          $details = $db->display($stmnt);
         

@@ -12,7 +12,7 @@ $db=new Database();
 $db->execute_query($sql);
                    if($db){
                               $message= 'Successfully Deleted';
-                              echo "hai";
+                              echo "Successfully Deleted";
                               }
 }
 ?>
@@ -35,14 +35,14 @@ $db->execute_query($sql);
           foreach ($result as $key => $value) {
             $meselected  = "";
             if (isset($_POST['depotname']))   {
-              if( $_POST['depotname'] == $value['deponame']) {
+              if( $_POST['depotname'] == $value['depotname']) {
                 $meselected = " selected "; 
               }
 
             }
 
 
-            echo "<option value='$value[deponame]'   $meselected>$value[deponame]</option>" ;
+            echo "<option value='$value[depotname]'   $meselected>$value[depotname]</option>" ;
           }
 
 
