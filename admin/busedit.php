@@ -9,27 +9,35 @@ $db=new Database();
 		<div class="form-group">
     <label for="depotname">Depot Name</label>
      </div>
+     <div>
     <select name="depotname" value="select" class="form-control" id="depotname" >
-    <option value="Select" selected="selected" disabled="disabled">Select</option>
-    <?php
     
-       $sql="SELECT * FROM `depot` WHERE 1";
+
+                 <option value="Select" selected="selected" disabled="disabled">Select</option>
+              <?php
+    
+                $sql="SELECT * FROM `depot` WHERE 1";
         
- 
                 $result=$db->display($sql);
                 
               foreach ($result as $key => $value) {
-              	  var_dump($value);
-	
-	              echo "<option value='$value[deponame]'>$value[deponame]</option>" ;
-                    }
-    
+              	 $name = $value['depotname'];
+				  $selectedMe = "";
+				if(isset($_POST['depotname']))
+				if($_POST['depotname'] == $name )
+					$selectedMe = "  selected ";
+                   echo "<option value='$name'   $selectedMe>$name</option>";
+									
+				}
+    ?>
        
-          ?>
-  
+ </select>
   </div>
+          
   
-  </select>
+  
+  
+ 
 <input type="submit" name="submit" value="Submit" onclick="action" align="center" a href="buseditview.php">
 	</form>	
 	</div>
@@ -60,7 +68,7 @@ $db=new Database();
 
         $details = $db->display($stmnt);
 
-
+        
         ?>
 
         <?php if( $details ): ?>

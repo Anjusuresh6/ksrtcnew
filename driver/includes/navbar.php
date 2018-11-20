@@ -19,12 +19,12 @@
 	</a>
 </li>
 
-<!-- <li class="nav-item">
+<li class="nav-item">
 	<a class="nav-link" href="admin/profile.php">
 		<i class="menu-icon mdi mdi-face"></i>
 		<span class="menu-title text-capitalize">Profile</span>
 	</a>
-</li> -->
+</li>
 
 
 
