@@ -2,6 +2,23 @@
 <?php
 $db=new Database();
 ?>
+<?php
+    if (isset($_POST['busid'])) 
+ {
+
+         $id = $_POST['busid'];
+         $sql="DELETE FROM `bus` WHERE `bus`.`busid` = '$id'";
+
+            $db->execute_query($sql);
+                   if($db){
+                              $message= 'Successfully Deleted';
+                              echo "Successfully Deleted";
+                              }
+                              else{
+                              	echo "hii";
+                              }
+}
+?>
 <section>
 	<div class="row-sm-10"  align="center">
 	<div class="col-sm-6" align="left" >
@@ -64,12 +81,15 @@ $db=new Database();
 
 
         $stmnt=" SELECT * FROM `bus` where `depot`= '$dpname' ";
+        
 
 
         $details = $db->display($stmnt);
 
         
         ?>
+
+
 
         <?php if( $details ): ?>
           <div class="table-responsive">
@@ -114,7 +134,7 @@ $db=new Database();
 
                           // }
                         ?>
-                   <!--  <a href="admin/stationmasterfulviewvol.php?id=<?php echo $value['busid']; ?>" id= <?php echo $value['busid']; ?>"  class="btn btn-sm btn-info "><i class="fas fa-trash-alt"></i> -->
+                   <!-- <a href="admin/stationmasterfulviewvol.php?id=<?php echo $value['busid']; ?>" id= <?php echo $value['busid']; ?>"  class="btn btn-sm btn-info "><i class="fas fa-trash-alt"></i> -->
                       <button name="submit" class="btn btn-sm btn-info "<i class="fas fa-trash-alt" ></i>go</button>
                       </form>
                     </td>

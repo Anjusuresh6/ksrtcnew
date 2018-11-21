@@ -38,7 +38,6 @@ function auth_login() {
 		$flag = false;  
 
 	
-	
 	if(!$flag ) {
 		auth_use();
 		exit();

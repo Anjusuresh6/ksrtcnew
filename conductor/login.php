@@ -31,23 +31,8 @@ $message=array(
 
 
 if( isset( $_SESSION[SYSTEM_NAME . 'userid'] ) ) {
-	if( $_SESSION[SYSTEM_NAME .'type'] == 'admin' ) {
-		setLocation(   PATH . 'admin');
-	}
-		if( $_SESSION[SYSTEM_NAME .'type'] == 'stationmaster' ) {
-		header('Location: ' . PATH . 'stationmaster');
-		
-		}
-		if( $_SESSION[SYSTEM_NAME .'type'] == 'inspector' ) {
-		header('Location: ' . PATH . 'inspetor');
-		}
-		
-		
-		if( $_SESSION[SYSTEM_NAME .'type'] == 'driver' ) {
-		header('Location: ' . PATH . 'driver');
-		}
-		if( $_SESSION[SYSTEM_NAME .'type'] == 'conductor' ) {
-		header('Location: ' . PATH . 'conductor');
+	if( $_SESSION['type'] == 'admin' ) {
+		header('Location: ' . PATH . 'admin');
 	}         
 
 	exit();
@@ -75,37 +60,10 @@ if(isset($_POST['login'])){
 		$_SESSION[SYSTEM_NAME . 'userid']=$username;
 
 
-		
+		$_SESSION[SYSTEM_NAME . 'type']='admin'; 
+		setLocation(  DIRECTORY_ADMIN );
 
-         switch ( $db->display($stmnt,$params)[0]['usertype']) {
-			case ADMIN :
-			$_SESSION[SYSTEM_NAME . 'type']='admin'; 
-		    setLocation(  DIRECTORY_ADMIN );
-			break;
-            case STATIONMASTER :
-			$_SESSION[SYSTEM_NAME . 'type']='stationmaster'; 
-		    setLocation(  DIRECTORY_STATIONMASTER );
-			break;
-			case ADMIN :
-			$_SESSION[SYSTEM_NAME . 'type']='inspector'; 
-		    setLocation(  DIRECTORY_INSPECTOR );
-			break;
-			case ADMIN :
-			$_SESSION[SYSTEM_NAME . 'driver']='driver'; 
-		    setLocation(  DIRECTORY_DRIVER );
-			break;
-			case ADMIN :
-			$_SESSION[SYSTEM_NAME . 'type']='conductor'; 
-		    setLocation(  DIRECTORY_CONDUCTOR );
-			break;
 
-			default:
-			setLocation(  DIRECTORY_PUBLIC.'login' );
-			break;
-		}
-
-		exit();
-	}  
 
 
 
@@ -116,7 +74,12 @@ if(isset($_POST['login'])){
 		$message [0] = 3;
 		$message [1] = 'Incorrect username or password'; 
 
+
 	}
+
+
+}
+
 
 
 ?>

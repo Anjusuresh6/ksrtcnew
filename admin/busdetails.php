@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
 
 
 		
-	//var_dump($_POST);
+	var_dump($_POST);
 	$busid = $_POST['busno'];
 	$bustype = $_POST['bustype'];
 	$purchase = $_POST['purchase'];
@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
          ':purchasedate'    =>  $purchase,
          
          ':noofseats'     =>  $seat,
-          ':depot'       =>  $deponame,
+          ':depot'       =>  $depot,
           ':producer'        =>  $producer,
           ':depoid'   =>  $depoid,
          // ':longestroute'    =>  $lngstsrc.$lngstdes,
@@ -96,11 +96,11 @@ if (isset($_POST['submit'])) {
 <?php 
 
 if (isset($_POST['depotname'])) {
-	$dpname = $_POST['depotname'];
+ 	$dpname = $_POST['depotname'];
 $stmnt=" SELECT * FROM `depot` where `depotname`= '$dpname' ";
        $details = $db->display($stmnt);
         foreach ($details as $key => $value){
-        	  $depoid= $value['depoid'];
+        	   $depoid= $value['depoid'];
         	
  }
 }
