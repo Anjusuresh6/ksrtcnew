@@ -2,7 +2,7 @@
 <?php
 $db=new Database();
 if (isset($_POST['submit'])) {	
-	// $deponame = $_POST['depotname'];
+	//$deponame = $_POST['depotname'];
  //       $stmnt=" SELECT * FROM `depot` where `depotname`= '$deponame' ";
         
  //         $details = $db->display($stmnt);
@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
 	$bustype = $_POST['bustype'];
 	$purchase = $_POST['purchase'];
 	$seat = $_POST['seat'];
-	$depot = $_POST['dname'];
+	$depot = $_POST['depotname'];
 	$producer = $_POST['producer'];
 	$submit=$_POST['submit'];
  
@@ -62,12 +62,12 @@ if (isset($_POST['submit'])) {
 <div class="row-sm-10"  align="center">
 <div class="col-sm-6" align="left" >
 
-       <form action="" method="post">
+     <form action="" method="post">
 	
 <div class="form-group">
     <label for="depotname">Depot Name</label>
 
-    <select name="dname" value="select" class="form-control" id="dname" OnChange="this.form.submit()">
+    <select name="depotname" value="select" class="form-control" id="depotname" OnChange="this.form.submit()">
     
 
      <option value="Select" selected="selected" disabled="disabled">Select</option>
@@ -89,7 +89,7 @@ if (isset($_POST['submit'])) {
 
 									$selectedMe = "";
 									if(isset($_POST['depotname']))
-										if($_POST['dname'] == $name )
+										if($_POST['depotname'] == $name )
 											$selectedMe = "  selected ";
 
 
@@ -108,11 +108,12 @@ if (isset($_POST['submit'])) {
 
 
 
-
 <?php 
 
 if (isset($_POST['depotname'])) {
- 	$dpname = $_POST['depotname'];
+ 	echo $dpname = $_POST['depotname'];
+ 	//echo $dpname;
+ 	//echo "$dpname";
 // $stmnt=" SELECT * FROM `depot` where `depotname`= '$dpname' ";
 //        $details = $db->display($stmnt);
 //         foreach ($details as $key => $value){
@@ -134,8 +135,10 @@ if (isset($_POST['depotname'])) {
 		  	<option value="ordinary">Ordinary</option>
 		  	<option value="superfast">Super Fast</option>
 		  	<option value="superdeluxe">Super Deluxe</option>
-		  	<option value="venad">Venad</option>
+		  	<option value="venad">Low Floor A/C</option>
 		  	<option value="towntotown">Town to Town</option>
+		  	<option value="towntotown">Non A/C Low Floor</option>
+		  	<option value="towntotown">Garuda Maharaja</option>
    </select>
 </div>
 <div class="form-group">

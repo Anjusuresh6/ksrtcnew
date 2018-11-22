@@ -79,12 +79,12 @@
 	</a>
 </li> -->
 
-<li class="nav-item">
+<!-- <li class="nav-item">
 	<a class="nav-link" href="admin/#">
 		<i class="menu-icon mdi mdi-message-alert-outline"></i>
 		<span class="menu-title text-capitalize">Complaints</span>
 	</a>
-</li>
+</li> -->
 
 
 
@@ -113,13 +113,13 @@
 
  
 
-<li class="nav-item">
+<<!-- li class="nav-item">
 	<a class="nav-link" href="admin/#">
 		<i class="menu-icon mdi mdi-bus-clock"></i>
 		<span class="menu-title text-capitalize">Booking</span>
 	</a>
 </li>
-
+ -->
 
 
 

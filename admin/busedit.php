@@ -135,7 +135,7 @@ $db=new Database();
                           // }
                         ?>
                    <!-- <a href="admin/stationmasterfulviewvol.php?id=<?php echo $value['busid']; ?>" id= <?php echo $value['busid']; ?>"  class="btn btn-sm btn-info "><i class="fas fa-trash-alt"></i> -->
-                      <button name="submit" class="btn btn-sm btn-info "<i class="fas fa-trash-alt" ></i>go</button>
+                      <button name="submit" class="btn btn-sm btn-info "<i class="fas fa-trash-alt" ></i>Delete</button>
                       </form>
                     </td>
                     <td><a href="admin/busedit_vol.php?id=<?php echo $value['busid']; ?>" id=<?php echo $value['busid']; ?>"   class="btn btn-sm btn-warning "  ><i class="far fa-edit"></i></a>     </td>

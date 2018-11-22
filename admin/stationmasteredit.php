@@ -138,7 +138,7 @@ $db->execute_query($sql);
                           // }
                         ?>
                    <!--  <a href="admin/stationmasterfulviewvol.php?id=<?php echo $value['stationmasterid']; ?>" id= <?php echo $value['stationmasterid']; ?>"  class="btn btn-sm btn-info "><i class="fas fa-trash-alt"></i> -->
-                      <button name="submit" class="btn btn-sm btn-info "<i class="fas fa-trash-alt" ></i>go</button>
+                      <button name="submit" class="btn btn-sm btn-info "<i class="fas fa-trash-alt" ></i>Delete</button>
                       </form>
                     </td>
                     <td><a href="admin/stationmasteredit_vol.php?id=<?php echo $value['stationmasterid']; ?>" id=<?php echo $value['stationmasterid']; ?>"   class="btn btn-sm btn-warning "  ><i class="far fa-edit"></i></a>     </td>

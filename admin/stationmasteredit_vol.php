@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
 'joiningyear' => $joining,
 'contactno' => $cno,
 'depotname' => $dname,
-'depotusename' => $dname,
+'depotusename' => $dusr,
 'depotpswd' => $dpswd
 	);
  
@@ -96,6 +96,10 @@ $error='';
 $message=array(
   null,
   null
+
+
+
+
 );
 
 

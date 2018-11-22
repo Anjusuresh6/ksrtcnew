@@ -2,14 +2,14 @@
 <?php include_once('includes/header.php') ?>
 <?php $db=new Database(); ?>
 <?php
-/*if (isset($_POST['submit'])) {      
+if (isset($_POST['submit'])) {      
   //var_dump($_POST);
   $sid = $_POST['sid'];
   $name = $_POST['sname'];
-  $type = $_POST['type'];
-  $joining = $_POST['joining'];
+  //$type = $_POST['type'];
+  //$joining = $_POST['joining'];
   $cno = $_POST['cno'];
-  $dname = $_POST['dname'];
+  //$dname = $_POST['dname'];
   $dusr = $_POST['dusr'];
   $dpswd = $_POST['dpswd'];
   $submit=$_POST['submit'];
@@ -18,13 +18,13 @@
 
 
 
-'name' => $name,
-'type' => $type,
-'joiningyear' => $joining,
+'depotname' => $name,
+//'type' => $type,
+//'joiningyear' => $joining,
 'contactno' => $cno,
-'depotname' => $dname,
-'depotusename' => $dname,
-'depotpswd' => $dpswd
+//'depotname' => $dname,
+'depousername' => $dusr,
+'depopswd' => $dpswd
   );
  
 
@@ -53,7 +53,7 @@
   //          $istrue=$db->execute_query($stmnt,$params);
 
 
-  $istrue = updateTable( 'stationmaster', $params, ' stationmasterid =' . $sid  , $db); 
+  $istrue = updateTable( 'depot', $params, ' depoid =' . $sid  , $db); 
                    if($istrue){
                               $message= 'Updated Successfully';
                               echo "Updated Successfully";
@@ -65,7 +65,7 @@
                        }
        
 
-}*/
+}
 
 ?>
 
@@ -181,6 +181,7 @@ $message=array(
         <td><div class="form-group">
                 <input type="text" name="cno" id="cno" class="form-control" value="<?php echo  $details['contactno']; ?>" disabled="disabled" >
                 <!-- <input type="hidden" name="type" value="<?php echo  $details['type']; ?>"> -->
+                
             </div>
         </td>
       </tr>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 22, 2018 at 10:03 AM
+-- Generation Time: Nov 22, 2018 at 06:00 PM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -87,10 +87,18 @@ CREATE TABLE IF NOT EXISTS `bus` (
   `type` char(20) NOT NULL,
   `purchasedate` date NOT NULL,
   `noofseats` int(10) NOT NULL,
-  `depot` varchar(30) NOT NULL,
+  `depot` varchar(20) NOT NULL,
   `producer` varchar(30) NOT NULL,
   PRIMARY KEY (`busid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bus`
+--
+
+INSERT INTO `bus` (`busid`, `type`, `purchasedate`, `noofseats`, `depot`, `producer`) VALUES
+('KL 1 345', 'towntotown', '2005-02-02', 50, 'Mallappally', 'Tata'),
+('KL 1 346', 'venad', '2000-02-02', 50, 'Kottayam', 'Tata');
 
 -- --------------------------------------------------------
 
@@ -303,7 +311,7 @@ CREATE TABLE IF NOT EXISTS `stationmaster` (
 
 INSERT INTO `stationmaster` (`stationmasterid`, `name`, `type`, `joiningyear`, `contactno`, `depotname`, `depotusename`, `depotpswd`) VALUES
 (10, 'Jeevan Jayan', 'Station Master', '2005-05-02', 9400472663, 'Mallappally', 'Mallappally', 'Dmlply'),
-(16, 'Leya', 'Station Master', '2006-05-20', 9544139255, 'Erumely', 'Dermly', 'Dermly'),
+(16, 'Leya', 'Station Master', '2006-05-20', 9544139255, 'Erumely', 'Erumely', 'Dermly'),
 (12, 'Anju Rajan', 'Station Master', '2005-03-02', 7034409806, 'Thiruvalla', 'Thiruvalla', 'Dtvla'),
 (19, 'Reshma', 'Station Master', '2005-02-02', 956422526, 'Kottayam', 'Dktym', 'Dktym');
 COMMIT;

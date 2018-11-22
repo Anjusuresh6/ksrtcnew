@@ -1,5 +1,51 @@
 <?php include_once('includes/header.php') ?>
 <?php $db=new Database(); ?>
+
+<?php
+if (isset($_POST['submit'])) {			
+	//var_dump($_POST);
+	$bid = $_POST['bid'];
+	//$name = $_POST['sname'];
+	$type = $_POST['type'];
+	$pdate = $_POST['pdate'];
+	$seat= $_POST['seat'];
+	$dname = $_POST['dname'];
+	$pusr = $_POST['pusr'];
+	//$dpswd = $_POST['dpswd'];
+	$submit=$_POST['submit'];
+
+	$params = array(
+
+
+
+//'name' => $name,
+'type' => $type,
+'purchasedate' => $pdate,
+'noofseats' => $seat,
+'depot' => $dname,
+'producer' => $pusr,
+//'depotpswd' => $dpswd
+	);
+ 
+
+
+
+	$istrue = updateTable( 'bus', $params, ' busid=' . $bid  , $db); 
+	                 if($istrue){
+	         	                  $message= 'Updated Successfully';
+	         	                  echo "Updated Successfully";
+	         	                   //setLocation("admin/stationmasteredit.php");
+	                            }
+	                 else{
+	         	          $message=$istrue;
+	         	           echo "Duplicate values";	
+	                     }
+	     
+	     
+
+}
+
+?>
 <?php
 
 
@@ -100,34 +146,27 @@ $message=array(
         <td><div class="form-group">
                 
                 <input type="text" name="type" id="type" class="form-control" value="<?php echo  $details['type']; ?>"  >
-                <!-- <input type="hidden" name="sname" value="<?php echo  $details['name']; ?>"> -->
+                <input type="hidden" name="type" value="<?php echo  $details['type']; ?>"> 
             </div>
         </td>
       </tr>
       <tr>
         <th scope="col">Purchase Date</th>
         <td><div class="form-group">
-                <input type="text" name="pdate" id="pdate" class="form-control" value="<?php echo  $details['purchasedate']; ?>" disabled="disabled" >
-                <input type="hidden" name="pdate" value="<?php echo  $details['puchasedate']; ?>">
+                <input type="date" name="pdate" id="pdate" class="form-control" value="<?php echo  $details['purchasedate']; ?>" disabled="disabled" >
+                <input type="hidden" name="pdate" value="<?php echo  $details['purchasedate']; ?>">
             </div>
         </td>
       </tr>
       <tr>
         <th scope="col">No of Seats</th>
         <td><div class="form-group">
-                <input type="text" name="seat" id="seat" class="form-control" value="<?php echo  $details['noofseats']; ?>" >
-                <!-- <input type="hidden" name="joining" value="<?php echo  $details['noofseats']; ?>"> -->
+                <input type="text" name="seat" id="seat" class="form-control" value="<?php echo  $details['noofseats']; ?>" disabled="disabled">
+                <input type="hidden" name="seat" value="<?php echo  $details['noofseats']; ?>">
             </div>
         </td>
       </tr>
-      <tr>
-        <th scope="col">Contact No</th>
-        <td><div class="form-group">
-                <input type="text" name="cno" id="cno" class="form-control" value="<?php echo  $details['contactno']; ?>" >
-                <!-- <input type="hidden" name="cno" value="<?php echo  $details['contactno']; ?>"> -->
-            </div>
-        </td>
-      </tr>
+     
       <tr>
         <th scope="col">Depot Name</th>
         <td><div class="form-group">
@@ -140,20 +179,14 @@ $message=array(
         <th scope="col">Producer</th>
         <td><div class="form-group">
                 <input type="text" name="pusr" id="pusr" class="form-control" value="<?php echo  $details['producer']; ?>" disabled="disabled" >
-                <input type="hidden" name="dusr" value="<?php echo  $details['producer']; ?>">
+                <input type="hidden" name="pusr" value="<?php echo  $details['producer']; ?>">
             </div>
         </td>
       </tr>
 
       <tr>
 
-        <th scope="col">Depot Id</th>
-        <td><div class="form-group">
-                <input type="text" name="dpid" id="dpid" class="form-control" value="<?php echo  $details['depoid']; ?>" disabled="disabled" >
-                <input type="hidden" name="dpid" value="<?php echo  $details['depoid']; ?>">
-            </div>
-        </td>
-      </tr>
+        
       </tbody>
 </table>
 <input type="submit" name="submit" value="Update" onclick="action">
