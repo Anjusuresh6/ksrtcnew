@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
 	$bustype = $_POST['bustype'];
 	$purchase = $_POST['purchase'];
 	$seat = $_POST['seat'];
-	//$depot = $_POST['depotname'];
+	$depot = $_POST['dname'];
 	$producer = $_POST['producer'];
 	$submit=$_POST['submit'];
  
@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
          ':purchasedate'    =>  $purchase,
          
          ':noofseats'     =>  $seat,
-          ':depot'       =>  $dpname,
+          ':depot'       =>  $depot,
           ':producer'        =>  $producer,
           //':depoid'   =>  $depoid,
          // ':longestroute'    =>  $lngstsrc.$lngstdes,
@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
 	         $istrue=$db->execute_query($stmnt,$params);
 	                 if($istrue){
 	         	                  $message= 'added';
-	         	                  echo "hai";
+	         	                  echo "Successsfully added";
 	                            }
 	                 else{
 	         	          $message=$istrue;
@@ -62,35 +62,51 @@ if (isset($_POST['submit'])) {
 <div class="row-sm-10"  align="center">
 <div class="col-sm-6" align="left" >
 
-            <form action="" method="post">
+       <form action="" method="post">
 	
-            <div class="form-group">
-                  <label for="depotname">Depot Name</label>
+<div class="form-group">
+    <label for="depotname">Depot Name</label>
 
-                   <select name="depotname" value="select" class="form-control" id="depotname" OnChange="this.form.submit()">
+    <select name="dname" value="select" class="form-control" id="dname" OnChange="this.form.submit()">
     
 
-                 <option value="Select" selected="selected" disabled="disabled">Select</option>
-              <?php
+     <option value="Select" selected="selected" disabled="disabled">Select</option>
+    <?php
     
-                $sql="SELECT * FROM `depot` WHERE 1";
+       $sql="SELECT * FROM `depot` WHERE 1";
         
+ 
                 $result=$db->display($sql);
                 
               foreach ($result as $key => $value) {
-              	 $name = $value['depotname'];
-				  $selectedMe = "";
-				if(isset($_POST['depotname']))
-				if($_POST['depotname'] == $name )
-					$selectedMe = "  selected ";
-                   echo "<option value='$name'   $selectedMe>$name</option>";
+              	   
+	
+	               //echo "<option value='$value[deponame]'>$value[deponame]</option>" ;
+
 									
-				}
+									$name = $value['depotname'];
+									
+
+									$selectedMe = "";
+									if(isset($_POST['depotname']))
+										if($_POST['dname'] == $name )
+											$selectedMe = "  selected ";
+
+
+										echo "<option value='$name'   $selectedMe>$name</option>";
+									
+									
+
+                    }
     ?>
        
- </select>
+ 
+  </select>
   </div>
-  </form>
+  
+</form>
+
+
 
 
 <?php 

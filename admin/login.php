@@ -113,8 +113,8 @@ if(isset($_POST['login'])){
 		exit();
 	} else{ 
 
-		$message [0] = 3;
-		$message [1] = 'Incorrect username or password'; 
+		//$message [0] = 3;
+		//$message [1] = 'Incorrect username or password'; 
 
 	}
 
