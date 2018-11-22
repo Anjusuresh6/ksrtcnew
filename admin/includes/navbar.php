@@ -71,13 +71,13 @@
 
 
 
-
+<!-- 
 <li class="nav-item">
 	<a class="nav-link" href="admin/depotdetails.php">
 		<i class="menu-icon mdi mdi-office-building"></i>
 		<span class="menu-title text-capitalize">Depot Details</span>
 	</a>
-</li>
+</li> -->
 
 <li class="nav-item">
 	<a class="nav-link" href="admin/#">
@@ -85,6 +85,31 @@
 		<span class="menu-title text-capitalize">Complaints</span>
 	</a>
 </li>
+
+
+
+
+
+
+
+<li class="nav-item">
+	<a class="nav-link" data-toggle="collapse" href="#depot" aria-expanded="false" aria-controls="depot">
+		<i class="menu-icon mdi mdi-bus"></i>
+		<span class="menu-title text-capitalize">depot</span>
+		<i class="menu-arrow"></i>
+	</a>
+	<div class="collapse" id="depot">
+		<ul class="nav flex-column sub-menu">
+			<li class="nav-item">
+				<a class="nav-link" href="admin/depotdetails.php">Add</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="admin/depoedit.php">Edit</a>
+			</li>
+		</ul>
+	</div>
+</li>
+
 
  
 
@@ -96,12 +121,6 @@
 </li>
 
 
-<li class="nav-item">
-	<a class="nav-link" href="admin/#">
-		<i class="menu-icon mdi mdi-message-alert-outline"></i>
-		<span class="menu-title text-capitalize">Complaints</span>
-	</a>
-</li>
 
 
  

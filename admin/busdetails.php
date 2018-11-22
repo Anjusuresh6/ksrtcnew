@@ -19,12 +19,12 @@ if (isset($_POST['submit'])) {
 	$bustype = $_POST['bustype'];
 	$purchase = $_POST['purchase'];
 	$seat = $_POST['seat'];
-	$depot = $_POST['depotname'];
+	//$depot = $_POST['depotname'];
 	$producer = $_POST['producer'];
 	$submit=$_POST['submit'];
  
 
- $stmnt ='insert into bus (busid,type,purchasedate,noofseats,depot,producer,depoid) values( :busid,:type,:purchasedate,:noofseats,:depot,:producer,:depoid)';
+ $stmnt ='insert into bus (busid,type,purchasedate,noofseats,depot,producer) values( :busid,:type,:purchasedate,:noofseats,:depot,:producer)';
 	     
 	     	     $params=array(
                  
@@ -34,9 +34,9 @@ if (isset($_POST['submit'])) {
          ':purchasedate'    =>  $purchase,
          
          ':noofseats'     =>  $seat,
-          ':depot'       =>  $depot,
+          ':depot'       =>  $dpname,
           ':producer'        =>  $producer,
-          ':depoid'   =>  $depoid,
+          //':depoid'   =>  $depoid,
          // ':longestroute'    =>  $lngstsrc.$lngstdes,
          // ':topcollection'   =>  $tpsrc.$tpdes,
          // ':income'          =>  $income,
@@ -97,12 +97,12 @@ if (isset($_POST['submit'])) {
 
 if (isset($_POST['depotname'])) {
  	$dpname = $_POST['depotname'];
-$stmnt=" SELECT * FROM `depot` where `depotname`= '$dpname' ";
-       $details = $db->display($stmnt);
-        foreach ($details as $key => $value){
-        	   $depoid= $value['depoid'];
+// $stmnt=" SELECT * FROM `depot` where `depotname`= '$dpname' ";
+//        $details = $db->display($stmnt);
+//         foreach ($details as $key => $value){
+//         	   $depoid= $value['depoid'];
         	
- }
+//  }
 }
 ?>
 

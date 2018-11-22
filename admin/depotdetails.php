@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
 	         $istrue=$db->execute_query($stmnt,$params);
 	                 if($istrue){
 	         	                  $message= 'added';
-	         	                  echo "hai";
+	         	                  echo "Successfully added";
 	                            }
 	                 else{
 	         	          $message=$istrue;

@@ -2,19 +2,19 @@
 <?php include_once('includes/header.php') ?>
 <?php $db=new Database(); ?>
 <?php
-if (isset($_POST['submit'])) {			
-	//var_dump($_POST);
-	$sid = $_POST['sid'];
-	$name = $_POST['sname'];
-	$type = $_POST['type'];
-	$joining = $_POST['joining'];
-	$cno = $_POST['cno'];
-	$dname = $_POST['dname'];
-	$dusr = $_POST['dusr'];
-	$dpswd = $_POST['dpswd'];
-	$submit=$_POST['submit'];
+/*if (isset($_POST['submit'])) {      
+  //var_dump($_POST);
+  $sid = $_POST['sid'];
+  $name = $_POST['sname'];
+  $type = $_POST['type'];
+  $joining = $_POST['joining'];
+  $cno = $_POST['cno'];
+  $dname = $_POST['dname'];
+  $dusr = $_POST['dusr'];
+  $dpswd = $_POST['dpswd'];
+  $submit=$_POST['submit'];
 
-	$params = array(
+  $params = array(
 
 
 
@@ -25,12 +25,12 @@ if (isset($_POST['submit'])) {
 'depotname' => $dname,
 'depotusename' => $dname,
 'depotpswd' => $dpswd
-	);
+  );
  
 
  // echo $stmnt ='UPDATE `stationmaster` SET name =:sname,type=:type,joiningyear=:joining,contactno=:cno,depotname=:dname,depotusename=:dusr,depotpswd=:dpswd WHERE stationmasterid=:sid ';
-	     
-	//      	     $params=array(
+       
+  //             $params=array(
                  
        
  //          ':sname'        =>  $name,
@@ -48,24 +48,24 @@ if (isset($_POST['submit'])) {
  //         // ':topcollection'   =>  $tpsrc.$tpdes,
  //         // ':income'          =>  $income,
          
-	//      	);
+  //        );
  
-	//          $istrue=$db->execute_query($stmnt,$params);
+  //          $istrue=$db->execute_query($stmnt,$params);
 
 
-	$istrue = updateTable( 'stationmaster', $params, ' stationmasterid =' . $sid  , $db); 
-	                 if($istrue){
-	         	                  $message= 'Updated Successfully';
-	         	                  echo "Updated Successfully";
-	         	                   setLocation("admin/stationmasteredit.php");
-	                            }
-	                 else{
-	         	          $message=$istrue;
-	         	           echo "Duplicate values";	
-	                     }
-	     
+  $istrue = updateTable( 'stationmaster', $params, ' stationmasterid =' . $sid  , $db); 
+                   if($istrue){
+                              $message= 'Updated Successfully';
+                              echo "Updated Successfully";
+                               setLocation("admin/stationmasteredit.php");
+                              }
+                   else{
+                      $message=$istrue;
+                       echo "Duplicate values"; 
+                       }
+       
 
-}
+}*/
 
 ?>
 
@@ -81,7 +81,7 @@ if (isset($_GET['id'])) {
 
 if (   $id == -1) {
 
-  setLocation("admin/stationmasteredit.php");
+  setLocation("admin/depoedit.php");
 }
 
 
@@ -120,7 +120,7 @@ $message=array(
     <?php
 
 
-    $stmnt=' SELECT * FROM `stationmaster` WHERE stationmasterid = :id ';
+    $stmnt=' SELECT * FROM `depot` WHERE depoid = :id ';
 
     $params = array (
       ':id' => $id
@@ -133,7 +133,7 @@ $message=array(
      $details =   $details[0];
    }  else {
 
-    setLocation("admin/stationmasteredit.php");
+    setLocation("admin/depoedit.php");
   }
 
   ?>
@@ -150,8 +150,8 @@ $message=array(
 
 
 <section>
-	<div class="row-sm-10"  align="center">
-		<div class="col-sm-6" align="left" >
+  <div class="row-sm-10"  align="center">
+    <div class="col-sm-6" align="left" >
 
 
 
@@ -161,48 +161,48 @@ $message=array(
   <table class="table table-hover w-50">
     <tbody>
       <tr>
-        <th scope="col">Stationmaster Id</th>
+        <th scope="col">Depot Id</th>
         <td>
-          <input type="text" name="sid" id="sid" value="<?php echo  $details['stationmasterid']; ?>" disabled="disabled">
-          <input type="hidden" name="sid" value="<?php echo  $details['stationmasterid']; ?>">
+          <input type="text" name="sid" id="sid" value="<?php echo  $details['depoid']; ?>" disabled="disabled">
+          <input type="hidden" name="sid" value="<?php echo  $details['depoid']; ?>">
         </td>
       </tr>
       <tr>
-        <th scope="col">Name</th>
+        <th scope="col">Depot Name</th>
         <td><div class="form-group">
                 
-                <input type="text" name="sname" id="sname" class="form-control" value="<?php echo  $details['name']; ?>"  >
+                <input type="text" name="sname" id="sname" class="form-control" value="<?php echo  $details['depotname']; ?>"  >
                 <!-- <input type="hidden" name="sname" value="<?php echo  $details['name']; ?>"> -->
-            </div>
-        </td>
-      </tr>
-      <tr>
-        <th scope="col">User Type</th>
-        <td><div class="form-group">
-                <input type="text" name="type" id="type" class="form-control" value="<?php echo  $details['type']; ?>" disabled="disabled" >
-                <input type="hidden" name="type" value="<?php echo  $details['type']; ?>">
-            </div>
-        </td>
-      </tr>
-      <tr>
-        <th scope="col">Joining Year</th>
-        <td><div class="form-group">
-                <input type="date" name="joining" id="joining" class="form-control" value="<?php echo  $details['joiningyear']; ?>" >
-                <!-- <input type="hidden" name="joining" value="<?php echo  $details['joiningyear']; ?>"> -->
             </div>
         </td>
       </tr>
       <tr>
         <th scope="col">Contact No</th>
         <td><div class="form-group">
-                <input type="text" name="cno" id="cno" class="form-control" value="<?php echo  $details['contactno']; ?>" >
+                <input type="text" name="cno" id="cno" class="form-control" value="<?php echo  $details['contactno']; ?>" disabled="disabled" >
+                <!-- <input type="hidden" name="type" value="<?php echo  $details['type']; ?>"> -->
+            </div>
+        </td>
+      </tr>
+      <tr>
+        <th scope="col">Depot Username</th>
+        <td><div class="form-group">
+                <input type="text" name="dusr" id="dusr" class="form-control" value="<?php echo  $details['depousername']; ?>" >
+                <!-- <input type="hidden" name="joining" value="<?php echo  $details['joiningyear']; ?>"> -->
+            </div>
+        </td>
+      </tr>
+      <tr>
+        <th scope="col">Depot Password</th>
+        <td><div class="form-group">
+                <input type="text" name="dpswd" id="dpswd" class="form-control" value="<?php echo  $details['depopswd']; ?>" >
                 <!-- <input type="hidden" name="cno" value="<?php echo  $details['contactno']; ?>"> -->
             </div>
         </td>
       </tr>
       
     
-      <tr>
+      <!-- <tr>
         <th scope="col">Depot Name</th>
         <td><div class="form-group">
                 <input type="text" name="dname" id="dname" class="form-control" value="<?php echo  $details['depotname']; ?>"  >
@@ -228,7 +228,7 @@ $message=array(
                 <input type="hidden" name="dpswd" value="<?php echo  $details['depotpswd']; ?>">
             </div>
         </td>
-      </tr>
+      </tr> -->
       </tbody>
 </table>
 <input type="submit" name="submit" value="Update" onclick="action">
@@ -258,3 +258,18 @@ $message=array(
 
 
 <?php include_once('includes/footer.php'); ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

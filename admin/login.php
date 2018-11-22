@@ -64,7 +64,7 @@ if(isset($_POST['login'])){
 	$stmnt='select * from login where username = :username and password = :password';
 	$params=array( 
 		':username'  =>  $username,
-		':password'  =>  $password
+		':password'  =>  $password,
 	);
 
 
