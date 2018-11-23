@@ -4,6 +4,21 @@
 $db=new Database();
 ?>
 
+<?php
+    if (isset($_POST['depoid'])) 
+ {
+
+   $id = $_POST['depoid'];
+   $sql="DELETE FROM `depot` WHERE `depot`.`depoid` = '$id'";
+
+$db->execute_query($sql);
+                   if($db){
+                              $message= 'Successfully Deleted';
+                              echo "Successfully Deleted";
+                              }
+}
+?>
+
 <section class="my-3">
 	<div class="row-sm-10"  align="center">
    <div class="col-sm-6" align="left" >
@@ -126,7 +141,7 @@ $db=new Database();
                           // }
                         ?>
                    <!--  <a href="admin/stationmasterfulviewvol.php?id=<?php echo $value['depoid']; ?>" id= <?php echo $value['depoid']; ?>"  class="btn btn-sm btn-info "><i class="fas fa-trash-alt"></i> -->
-                      <button name="submit" class="btn btn-sm btn-info "<i class="fas fa-trash-alt" ></i>go</button>
+                      <button name="submit" class="btn btn-sm btn-info "<i class="fas fa-trash-alt" ></i>Delete</button>
                       </form>
                     </td>
                     <td><a href="admin/depoedit_vol.php?id=<?php echo $value['depoid']; ?>" id=<?php echo $value['depoid']; ?>"   class="btn btn-sm btn-warning "  ><i class="far fa-edit"></i></a>     </td>

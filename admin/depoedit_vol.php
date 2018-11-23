@@ -179,7 +179,7 @@ $message=array(
       <tr>
         <th scope="col">Contact No</th>
         <td><div class="form-group">
-                <input type="text" name="cno" id="cno" class="form-control" value="<?php echo  $details['contactno']; ?>" disabled="disabled" >
+                <input type="text" name="cno" id="cno" class="form-control" value="<?php echo  $details['contactno']; ?>"  >
                 <!-- <input type="hidden" name="type" value="<?php echo  $details['type']; ?>"> -->
                 
             </div>

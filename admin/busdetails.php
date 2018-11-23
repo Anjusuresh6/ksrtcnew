@@ -2,7 +2,7 @@
 <?php
 $db=new Database();
 if (isset($_POST['submit'])) {	
-	//$deponame = $_POST['depotname'];
+	
  //       $stmnt=" SELECT * FROM `depot` where `depotname`= '$deponame' ";
         
  //         $details = $db->display($stmnt);
@@ -14,12 +14,13 @@ if (isset($_POST['submit'])) {
 
 
 		
-	var_dump($_POST);
+	//var_dump($_POST);
+	$deponame = $_POST['depotname'];
 	$busid = $_POST['busno'];
 	$bustype = $_POST['bustype'];
 	$purchase = $_POST['purchase'];
 	$seat = $_POST['seat'];
-	$depot = $_POST['depotname'];
+	//$depot = $_POST['depotname'];
 	$producer = $_POST['producer'];
 	$submit=$_POST['submit'];
  
@@ -34,7 +35,7 @@ if (isset($_POST['submit'])) {
          ':purchasedate'    =>  $purchase,
          
          ':noofseats'     =>  $seat,
-          ':depot'       =>  $depot,
+          ':depot'       =>  $deponame,
           ':producer'        =>  $producer,
           //':depoid'   =>  $depoid,
          // ':longestroute'    =>  $lngstsrc.$lngstdes,
@@ -50,7 +51,7 @@ if (isset($_POST['submit'])) {
 	                            }
 	                 else{
 	         	          $message=$istrue;
-	         	           echo "hlo";	
+	         	           echo "Duplicate Values";	
 	                     }
 	     
 
@@ -108,7 +109,7 @@ if (isset($_POST['submit'])) {
 
 
 
-<?php 
+<!-- <?php 
 
 if (isset($_POST['depotname'])) {
  	echo $dpname = $_POST['depotname'];
@@ -121,9 +122,10 @@ if (isset($_POST['depotname'])) {
         	
 //  }
 }
-?>
+?> -->
 
 <form  action="" method="POST" data-parsley-validate >
+	<input type="hidden" name="depotname" value="<?php if(isset($_POST['depotname'])) {echo $_POST['depotname'];} ?>">
 <div class="form-group">
  <label for="busno">Bus No</label>
   <input type="text" class="form-control" id="busno" name="busno"   placeholder="Enter Bus No" required="Required"> 

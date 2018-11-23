@@ -5,32 +5,32 @@
 if (isset($_POST['submit'])) {			
 	//var_dump($_POST);
 	$bid = $_POST['bid'];
-	//$name = $_POST['sname'];
+	
 	$type = $_POST['type'];
 	$pdate = $_POST['pdate'];
 	$seat= $_POST['seat'];
 	$dname = $_POST['dname'];
 	$pusr = $_POST['pusr'];
-	//$dpswd = $_POST['dpswd'];
+	
 	$submit=$_POST['submit'];
 
 	$params = array(
 
 
 
-//'name' => $name,
+
 'type' => $type,
 'purchasedate' => $pdate,
 'noofseats' => $seat,
 'depot' => $dname,
 'producer' => $pusr,
-//'depotpswd' => $dpswd
+
 	);
  
 
 
 
-	$istrue = updateTable( 'bus', $params, ' busid=' . $bid  , $db); 
+	$istrue = updateTable( 'bus', $params, ' busid =' . $bid  , $db);  
 	                 if($istrue){
 	         	                  $message= 'Updated Successfully';
 	         	                  echo "Updated Successfully";
@@ -139,6 +139,7 @@ $message=array(
         <td>
           <input type="text" name="bid" id="bid" value="<?php echo  $details['busid']; ?>" disabled="disabled">
           <input type="hidden" name="bid" value="<?php echo  $details['busid']; ?>">
+          <?php echo $_POST['bid'] ?>
         </td>
       </tr>
       <tr>
