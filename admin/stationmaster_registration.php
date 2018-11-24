@@ -13,6 +13,7 @@ if (isset($_POST['submit'])) {
         foreach ($details as $key => $value){
         	$usrname= $value['depousername'];
         	$pswd=$value['depopswd'];
+        	$id=$value['depoid']
         }
 
 	//var_dump($_POST);

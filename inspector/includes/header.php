@@ -1,11 +1,6 @@
 <?php
 
-/**
- * @Author: indran
- * @Date:   2018-10-17 16:48:54
- * @Last Modified by:   indran
- * @Last Modified time: 2018-11-08 06:45:42
- */
+
 
 include_once('../global.php'); ?>
 <?php include_once('../root/functions.php'); ?>
@@ -17,7 +12,7 @@ auth_login();
 
 
 <!DOCTYPE html>
-<html lang="en"  ng-app="app-admin">
+<html lang="en"  ng-app="app-inspector">
 
 <head>
 	<meta charset="utf-8">
@@ -171,7 +166,7 @@ auth_login();
 
         <li class="nav-item dropdown d-none d-xl-inline-block">
         	<a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-        		<span class="profile-text">Hello, Admin !</span>
+        		<span class="profile-text">Hello, Inspector !</span>
         		<img class="img-xs rounded-circle" src="assets/image/default/user.png" alt="Profile image"> </a>
         		<div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
         			

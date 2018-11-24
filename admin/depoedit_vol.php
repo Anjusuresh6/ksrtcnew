@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
                    if($istrue){
                               $message= 'Updated Successfully';
                               echo "Updated Successfully";
-                               setLocation("admin/stationmasteredit.php");
+                               //setLocation("admin/stationmasteredit.php");
                               }
                    else{
                       $message=$istrue;

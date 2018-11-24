@@ -1,8 +1,7 @@
 <?php include_once('includes/header.php') ?>
 <?php
 $db=new Database();
-// $link=mysql_connect("localhost","root","","ksrtc") or die("not connected");
-// $db=mysql_select_db("ksrtc",$link) or die("no database");
+
 if (isset($_POST['submit'])) {			
 	// var_dump($_POST);
 	$dname = $_POST['depotname'];
@@ -10,14 +9,7 @@ if (isset($_POST['submit'])) {
 	$dusrname = $_POST['dusrname'];
 	$dpswd = $_POST['dpswd'];
 	$cnfrm = $_POST['cnfrm'];
-	// $noofbus = $_POST['noofbus'];
-	// $location = $_POST['location'];
-	// $emp = $_POST['emp'];
-	// $lngstsrc = $_POST['lngstroutesrc'];
-	// $lngstdes = $_POST['lngstroutedes'];
-	// $tpsrc = $_POST['tpsrc'];
-	// $tpdes = $_POST['tpdes'];
-	// $income = $_POST['income'];
+	
 	$submit=$_POST['submit'];
  
 
@@ -89,55 +81,7 @@ if (isset($_POST['submit'])) {
     <input type="password" class="form-control" id="cnfrm" name="cnfrm"   placeholder="Confirm Password" required="Required"> 
   </div>
 
-  <!-- <div class="form-group"> -->
-    <!-- <label for="noofbus">No Of Buses</label> -->
-    <!-- <input type="text" class="form-control" id="noofbus" name="noofbus"   placeholder="Enter No of Buses" required="Required">  -->
-  <!-- </div> -->
-  <!-- <div class="form-group"> -->
-    <!-- <label for="location">Location</label> -->
-    <!-- <input type="text" class="form-control" id="location" name="location"   placeholder="Enter Location" required="Required">  -->
-  <!-- </div> -->
-
-  <!-- <div class="form-group"> -->
-    <!-- <label for="emp">No of Employees</label>
-    <input type="text" class="form-control" id="emp" name="emp"   placeholder="Enter No of Employees" required="Required"> 
-  </div>
-  <div class="form-group">
-    <label for="lngstroute">Longest Route</label>
-    <div class="row">
-    	<div class="col-sm-6">
-    <input type="text" class="form-control" id="lngstroutesrc" name="lngstroutesrc"   placeholder="Enter Source" required="Required"> 
-</div>
-<div class="col-sm-6">
-     <input type="text" class="form-control" id="lngstroutedes" name="lngstroutedes"   placeholder="Enter Destination" required="Required"> 
-  </div>
-</div>
-  <div class="form-group">
-   <label for="top">Top Collection Route</label>
-   <div class="row">
-      
-  	<div class="col-sm-6">
-  		
-
-  		<input type="text" class="form-control" id="tpsrc" name="tpsrc"   placeholder="Enter Source" required="Required"> 
-  	</div>
-  	<div class="col-sm-6">
-  		<input type="text" class="form-control" id="tpdes" name="tpdes"   placeholder="Enter Destination" required="Required"> 
-  	</div>
-  	
-  </div>
-
-   
-    
-    
-     
   
-
-
-  <div class="form-group">
-    <label for="income">Income</label>
-    <input type="number" data-parsley-minlength="6" data-parsley-error-message="Income should be in digits"   class="form-control" id="income" name="income"   placeholder="Enter Income" required="Required"> 
-  </div> -->
   <input type="submit" name="submit" value="Submit" onclick="action">
            </form >
 

@@ -54,6 +54,15 @@ $db->execute_query($sql);
         </div>
 
       </select>
+      <!-- <?php
+          //$dpname= $_POST['depotname'];
+          //var_dump($_POST);
+           $sql="SELECT COUNT(`busid`) as no FROM `bus` WHERE `depot`='$dpname'";
+         $result=$db->display($sql);
+          foreach ($result as $key => $value) {
+          $no= $value['no'];
+          }
+         ?> -->
     </div>
     <div class="form-group">
      <input type="submit" name="submit" value="Submit" class="btn btn-info "  onclick="frm2" align="center" >
@@ -65,7 +74,11 @@ $db->execute_query($sql);
  {
 
   $dpname = $_POST['depotname'];
-
+   $sql="SELECT COUNT(`busid`) as no FROM `bus` WHERE `depot`='$dpname'";
+         $result=$db->display($sql);
+          foreach ($result as $key => $value) {
+          $no= $value['no'];
+          }
 }
 ?>
 </div>
@@ -108,7 +121,7 @@ $db->execute_query($sql);
                   <th scope="col">Contact No</th>
                   <th scope="col">Depot Username</th>
                   <th scope="col">Depot Password</th>
-                  <!-- <th scope="col">Stationmaster Name</th> -->
+                  <th scope="col">No of Buses</th>
                   <!-- <th scope="col">No of Buses</th> -->
                   <!-- <th scope="col">Depot Password</th> -->
                   <th scope="col" colspan="2">Action</th>
@@ -127,7 +140,7 @@ $db->execute_query($sql);
                     <!-- <td><?php echo $value['depotname']; ?></td> -->
                     <!-- <td><?php echo $value['depousername']; ?></td> -->
                     <td><?php echo $value['depopswd']; ?></td>
-
+                     <td><?php echo $no ; ?></td>
 
                     <td>
                       <form action="action" method="post">

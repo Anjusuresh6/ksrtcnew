@@ -19,29 +19,29 @@
 	</a>
 </li>
 
-<li class="nav-item">
+<!-- <li class="nav-item">
 	<a class="nav-link" href="admin/profile.php">
 		<i class="menu-icon mdi mdi-face"></i>
 		<span class="menu-title text-capitalize">Profile</span>
 	</a>
 </li>
-
+ -->
 
 
 
 <li class="nav-item">
-	<a class="nav-link" data-toggle="collapse" href="#StationMaster" aria-expanded="false" aria-controls="StationMaster">
+	<a class="nav-link" data-toggle="collapse" href="#inspector" aria-expanded="false" aria-controls="inspector">
 		<i class="menu-icon mdi mdi-account-plus-outline"></i>
-		<span class="menu-title text-capitalize">Station Master</span>
+		<span class="menu-title text-capitalize">Inspection</span>
 		<i class="menu-arrow"></i>
 	</a>
-	<div class="collapse" id="StationMaster">
+	<div class="collapse" id="inspector">
 		<ul class="nav flex-column sub-menu">
 			<li class="nav-item">
-				<a class="nav-link" href="admin/stationmaster_registration.php">Add</a>
+				<a class="nav-link" href="inspector/inspection.php">Add</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="admin/stationmasteredit.php">View</a>
+				<a class="nav-link" href="inspector/inspectionedit.php">View</a>
 			</li>
 		</ul>
 	</div>
@@ -50,7 +50,7 @@
 
 
 
-<li class="nav-item">
+<!-- <li class="nav-item">
 	<a class="nav-link" data-toggle="collapse" href="#bus" aria-expanded="false" aria-controls="bus">
 		<i class="menu-icon mdi mdi-bus"></i>
 		<span class="menu-title text-capitalize">bus</span>
@@ -116,7 +116,7 @@
 
 
 
-
+ -->
 
 
 
